@@ -9,9 +9,6 @@ services:
       - static_data:/vol/static
     ports:
       - 80:80
-    depends_on:
-      - web
-      - app
     networks:
       - mynet
 
