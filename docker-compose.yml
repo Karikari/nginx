@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    volumes:
+      - nimdi_media:/vol/media
+      - static_data:/vol/static
+    ports:
+      - 80:80
+    depends_on:
+      - web
+      - app
+    networks:
+      - mynet
+
+volumes:
+   postgres_data:
+   nimdi_media:
+   static_data:
+
+networks:
+   mynet:
